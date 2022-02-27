@@ -12,5 +12,8 @@ if (ENV === 'development') {
 
 module.exports = {
     mode: process.env.NODE_ENV,
+    resolve: {
+        extensions: ['.js', '.ts'],
+    },
     ...config,
 };
