@@ -33,6 +33,10 @@ module.exports = {
                     'postcss-loader',
                 ],
             },
+            {
+                test: /\.(eot|svg|ttf|woff)$/,
+                use: 'url-loader'
+            }
         ]
     },
     plugins: [
@@ -42,6 +46,7 @@ module.exports = {
             filename: 'index.html',
         }),
     ],
+    devtool: 'source-map',
     devServer: {
         server: 'http',
         port: 3000,
