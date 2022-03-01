@@ -1,0 +1,42 @@
+@import './variables.less';
+
+.form-item {
+    padding: 6px 12px;
+    align-items: center;
+    &.inline-form {
+        display: flex;
+        label {
+            display: inline;
+            margin-right: 10px;
+        }
+        .input {
+            flex: 1;
+        }
+    }
+    label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input {
+        width: 100%;
+    }
+}
+
+.input {
+    height: 38px;
+    font-size: 14px;
+    padding: 0 15px;
+    color: @primary-text-color;
+    border: 1px solid @placeholder-text-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    #base-animation();
+    &::placeholder {
+        color: @placeholder-text-color;
+    }
+    &:focus {
+        border-color: @primary-color;
+    }
+}

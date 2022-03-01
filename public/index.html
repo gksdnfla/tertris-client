@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
-<body>
-    <div class="wrap">
-        <div class="screen">
-            <canvas id="my-screen"></canvas>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">
+                <div class="screen">
+                    <canvas id="my-screen"></canvas>
+                </div>
+                <div class="point-panel">
+                    <p>分数: <span id="my-point">0</span></p>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="screen">
+                    <canvas id="enemy-screen"></canvas>
+                </div>
+                <div class="point-panel">
+                    <p>分数: <span id="enemy-point">0</span></p>
+                </div>
+            </div>
         </div>
-        <div class="point-panel">
-            <p>分数: <span id="my-point">0</span></p>
+        <div id="modal-wrap" class="modal-wrap">
+            <div class="enter-username-modal modal-container">
+                <h3 class="title text-center">Enter Username</h3>
+                <input
+                    id="username"
+                    class="username-input input"
+                    type="text"
+                    placeholder="Please enter username"
+                    autocomplete="off"
+                />
+                <p
+                    id="username-duplicate-hint"
+                    class="username-duplicate-hint text-danger"
+                >
+                    Username already in use by someone else.
+                </p>
+                <button
+                    id="start-btn"
+                    class="start-btn btn primary-btn is-round"
+                >
+                    Start
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="wrap">
-        <div class="screen">
-            <canvas id="enemy-screen"></canvas>
-        </div>
-        <div class="point-panel">
-            <p>分数: <span id="enemy-point">0</span></p>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

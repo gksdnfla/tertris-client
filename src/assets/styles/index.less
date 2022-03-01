@@ -1,23 +1,77 @@
-@import url('./style.css');
+@import './style.css';
+@import './variables.less';
+@import './namespaces.less';
+@import './button.less';
+@import './form.less';
+@import './text.less';
 
 body {
-    min-height: 100vh;
     margin: 0;
-    display: flex;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, SimSun, sans-serif;
+    color: @primary-text-color;
 }
 
-.wrap {
-    flex: 1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, SimSun, sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    min-height: 100vh;
     display: flex;
-    & > .screen {
+    .wrap {
         flex: 1;
-        background-color: #000000;
-        & > canvas {
-            width: 100%;
+        display: flex;
+        & > .screen {
+            flex: 1;
+            background-color: #000000;
+            & > canvas {
+                width: 100%;
+            }
+        }
+        & > .point-panel {
+            width: 100px;
+            padding: 20px;
         }
     }
-    & > .point-panel {
-        width: 100px;
-        padding: 20px;
+}
+
+.modal-wrap {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    .modal-container {
+        #modal-base();
+    }
+    .enter-username-modal {
+        width: 500px;
+        .username-input {
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+        }
+        .username-duplicate-hint {
+            width: 80%;
+            margin: 10px auto;
+            display: none;
+        }
+        .start-btn {
+            width: 200px;
+            display: block;
+            margin: 30px auto;
+        }
     }
 }
